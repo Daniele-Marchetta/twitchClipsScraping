@@ -2,11 +2,10 @@ from data import filters,data_obj,TwitchClips
 import requests
 
 data=data_obj
-clips=[]
 headers = {"Client-ID":"kimne78kx3ncx6brgo4mv6wki5h1ko"}
 
 def get_clips(game_name,limit,tags,filter=filters.LAST_DAY.name,languages=["EN","IT"]):
-    global data
+    clips=[]
     data[0]["variables"]["gameName"]=game_name.upper()
     data[0]["variables"]["limit"]=limit
     data[0]["variables"]["criteria"]["languages"]=languages
